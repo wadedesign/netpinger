@@ -1,10 +1,12 @@
 import asyncio
 from typing import Dict, Any
 from .protocols.dayz import DayZProtocol
+from .protocols.discord import DiscordProtocol
 from .exceptions import QueryError
 
 PROTOCOLS = {
-    "dayz": DayZProtocol
+    "dayz": DayZProtocol,
+    "discord": DiscordProtocol
 }
 
 async def query_server(game: str, host: str, port: int, timeout: float = 5.0) -> Dict[str, Any]:
@@ -13,8 +15,8 @@ async def query_server(game: str, host: str, port: int, timeout: float = 5.0) ->
     
     Args:
         game: The game protocol to use
-        host: Server hostname or IP
-        port: Server port
+        host: Server hostname or IP (or guild ID for Discord)
+        port: Server port (not used for Discord)
         timeout: Query timeout in seconds
     
     Returns:
