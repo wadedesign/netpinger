@@ -23,4 +23,7 @@ classifiers = [
 keywords = ["networking", "game servers", "ping"]
 
 [project.urls]
-Homepage = "https://github.com/wadedesign/netpinger" 
+Homepage = "https://github.com/wadedesign/netpinger"
+
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"

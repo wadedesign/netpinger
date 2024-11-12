@@ -1,0 +1,268 @@
+[
+    {
+        "label": "asyncio",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "asyncio",
+        "description": "asyncio",
+        "detail": "asyncio",
+        "documentation": {}
+    },
+    {
+        "label": "query_server",
+        "importPath": "netpinger",
+        "description": "netpinger",
+        "isExtraImport": true,
+        "detail": "netpinger",
+        "documentation": {}
+    },
+    {
+        "label": "query_server",
+        "importPath": "netpinger",
+        "description": "netpinger",
+        "isExtraImport": true,
+        "detail": "netpinger",
+        "documentation": {}
+    },
+    {
+        "label": "QueryError",
+        "importPath": "netpinger",
+        "description": "netpinger",
+        "isExtraImport": true,
+        "detail": "netpinger",
+        "documentation": {}
+    },
+    {
+        "label": "TimeoutError",
+        "importPath": "netpinger",
+        "description": "netpinger",
+        "isExtraImport": true,
+        "detail": "netpinger",
+        "documentation": {}
+    },
+    {
+        "label": "socket",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "socket",
+        "description": "socket",
+        "detail": "socket",
+        "documentation": {}
+    },
+    {
+        "label": "dns.resolver",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "dns.resolver",
+        "description": "dns.resolver",
+        "detail": "dns.resolver",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "idna",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "idna",
+        "description": "idna",
+        "detail": "idna",
+        "documentation": {}
+    },
+    {
+        "label": "struct",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "struct",
+        "description": "struct",
+        "detail": "struct",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "aiohttp",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "aiohttp",
+        "description": "aiohttp",
+        "detail": "aiohttp",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "DiscordProtocol",
+        "importPath": "netpinger.protocols.discord",
+        "description": "netpinger.protocols.discord",
+        "isExtraImport": true,
+        "detail": "netpinger.protocols.discord",
+        "documentation": {}
+    },
+    {
+        "label": "QueryError",
+        "importPath": "netpinger.exceptions",
+        "description": "netpinger.exceptions",
+        "isExtraImport": true,
+        "detail": "netpinger.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "DnsResolver",
+        "kind": 6,
+        "importPath": "lib.networking.dns",
+        "description": "lib.networking.dns",
+        "peekOfCode": "class DnsResolver:\n    def __init__(self, logger: logging.Logger):\n        self.logger = logger\n    async def resolve(self, host: str, ip_family: int, srv_record_prefix: str = None):\n        self.logger.debug(f'DNS Lookup: {host}')\n        try:\n            socket.inet_pton(socket.AF_INET, host)\n            self.logger.debug(f'Raw IP Address: {host}')\n            return { 'address': host }\n        except socket.error:",
+        "detail": "lib.networking.dns",
+        "documentation": {}
+    },
+    {
+        "label": "DayZProtocol",
+        "kind": 6,
+        "importPath": "src.netpinger.protocols.dayz",
+        "description": "src.netpinger.protocols.dayz",
+        "peekOfCode": "class DayZProtocol:\n    \"\"\"Implementation of the DayZ server query protocol (based on Valve protocol).\"\"\"\n    A2S_INFO = b'\\xFF\\xFF\\xFF\\xFFTSource Engine Query\\x00'\n    DAYZ_INFO = b'\\xFF\\xFF\\xFF\\xFFTDayZ Server Query\\x00'\n    A2S_INFO_RESPONSE = 0x49  # 'I'\n    A2S_PLAYER = b'\\xFF\\xFF\\xFF\\xFF\\x55'  # 'U'\n    A2S_RULES = b'\\xFF\\xFF\\xFF\\xFF\\x56'   # 'V'\n    # im guessing these are the ports that dayz uses\n    QUERY_PORT_OFFSETS = [24, 123, 23, 0]  \n    MAX_RETRIES = 3",
+        "detail": "src.netpinger.protocols.dayz",
+        "documentation": {}
+    },
+    {
+        "label": "DiscordProtocol",
+        "kind": 6,
+        "importPath": "src.netpinger.protocols.discord",
+        "description": "src.netpinger.protocols.discord",
+        "peekOfCode": "class DiscordProtocol:\n    \"\"\"Protocol for querying Discord guild information via the Discord API.\"\"\"\n    async def query(self, guild_id: str, port: int = None, timeout: float = 5.0) -> Dict[str, Any]:\n        \"\"\"\n        Query a Discord guild and return its information.\n        Args:\n            guild_id: The Discord guild ID (used instead of host)\n            port: Not used for Discord protocol\n            timeout: Query timeout in seconds\n        Returns:",
+        "detail": "src.netpinger.protocols.discord",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "src.netpinger.protocols.discord",
+        "description": "src.netpinger.protocols.discord",
+        "peekOfCode": "logger = logging.getLogger(__name__)\nclass DiscordProtocol:\n    \"\"\"Protocol for querying Discord guild information via the Discord API.\"\"\"\n    async def query(self, guild_id: str, port: int = None, timeout: float = 5.0) -> Dict[str, Any]:\n        \"\"\"\n        Query a Discord guild and return its information.\n        Args:\n            guild_id: The Discord guild ID (used instead of host)\n            port: Not used for Discord protocol\n            timeout: Query timeout in seconds",
+        "detail": "src.netpinger.protocols.discord",
+        "documentation": {}
+    },
+    {
+        "label": "NetPingerError",
+        "kind": 6,
+        "importPath": "src.netpinger.exceptions",
+        "description": "src.netpinger.exceptions",
+        "peekOfCode": "class NetPingerError(Exception):\n    \"\"\"Base exception for all netpinger errors.\"\"\"\n    pass\nclass QueryError(NetPingerError):\n    \"\"\"Raised when there's an error querying the server.\"\"\"\n    pass\nclass TimeoutError(NetPingerError):\n    \"\"\"Raised when the query times out.\"\"\"\n    pass",
+        "detail": "src.netpinger.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "QueryError",
+        "kind": 6,
+        "importPath": "src.netpinger.exceptions",
+        "description": "src.netpinger.exceptions",
+        "peekOfCode": "class QueryError(NetPingerError):\n    \"\"\"Raised when there's an error querying the server.\"\"\"\n    pass\nclass TimeoutError(NetPingerError):\n    \"\"\"Raised when the query times out.\"\"\"\n    pass",
+        "detail": "src.netpinger.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "TimeoutError",
+        "kind": 6,
+        "importPath": "src.netpinger.exceptions",
+        "description": "src.netpinger.exceptions",
+        "peekOfCode": "class TimeoutError(NetPingerError):\n    \"\"\"Raised when the query times out.\"\"\"\n    pass",
+        "detail": "src.netpinger.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "PROTOCOLS",
+        "kind": 5,
+        "importPath": "src.netpinger.querier",
+        "description": "src.netpinger.querier",
+        "peekOfCode": "PROTOCOLS = {\n    \"dayz\": DayZProtocol,\n    \"discord\": DiscordProtocol\n}\nasync def query_server(game: str, host: str, port: int, timeout: float = 5.0) -> Dict[str, Any]:\n    \"\"\"\n    Query a game server and return its information.\n    Args:\n        game: The game protocol to use\n        host: Server hostname or IP (or guild ID for Discord)",
+        "detail": "src.netpinger.querier",
+        "documentation": {}
+    },
+    {
+        "label": "pytest_configure",
+        "kind": 2,
+        "importPath": "tests.t_discord",
+        "description": "tests.t_discord",
+        "peekOfCode": "def pytest_configure(config):\n    \"\"\"Register the 'live' marker\"\"\"\n    config.addinivalue_line(\n        \"markers\", \"live: mark test as requiring live internet connection\"\n    )\n@pytest.mark.asyncio\n@pytest.mark.live\nasync def test_live_discord_server():\n    protocol = DiscordProtocol()\n    try:",
+        "detail": "tests.t_discord",
+        "documentation": {}
+    },
+    {
+        "label": "SERVER_ID",
+        "kind": 5,
+        "importPath": "tests.t_discord",
+        "description": "tests.t_discord",
+        "peekOfCode": "SERVER_ID = \"1279289370125275219\"  # Discord.py server as an example\ndef pytest_configure(config):\n    \"\"\"Register the 'live' marker\"\"\"\n    config.addinivalue_line(\n        \"markers\", \"live: mark test as requiring live internet connection\"\n    )\n@pytest.mark.asyncio\n@pytest.mark.live\nasync def test_live_discord_server():\n    protocol = DiscordProtocol()",
+        "detail": "tests.t_discord",
+        "documentation": {}
+    }
+]

@@ -1,6 +1,9 @@
 import aiohttp
+import logging
 from typing import Dict, Any
 from ..exceptions import QueryError
+
+logger = logging.getLogger(__name__)
 
 class DiscordProtocol:
     """Protocol for querying Discord guild information via the Discord API."""
@@ -29,6 +32,7 @@ class DiscordProtocol:
             try:
                 async with session.get(api_url, timeout=timeout) as response:
                     if response.status != 200:
+                        logger.error(f"Discord API returned status {response.status} for guild ID {guild_id}")
                         raise QueryError(f"Discord API returned status {response.status}")
                     
                     data = await response.json()
@@ -57,6 +61,8 @@ class DiscordProtocol:
                     return result
                     
             except aiohttp.ClientError as e:
+                logger.error(f"Failed to query Discord API: {str(e)}")
                 raise QueryError(f"Failed to query Discord API: {str(e)}")
             except Exception as e:
+                logger.error(f"Unexpected error querying Discord: {str(e)}")
                 raise QueryError(f"Unexpected error querying Discord: {str(e)}")
