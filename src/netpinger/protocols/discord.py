@@ -31,8 +31,11 @@ class DiscordProtocol:
         async with aiohttp.ClientSession() as session:
             try:
                 async with session.get(api_url, timeout=timeout) as response:
-                    if response.status != 200:
+                    if response.status not in [200, 404]:
                         logger.error(f"Discord API returned status {response.status} for guild ID {guild_id}")
+                        raise QueryError(f"Discord API returned status {response.status}")
+                    
+                    if response.status == 404:
                         raise QueryError(f"Discord API returned status {response.status}")
                     
                     data = await response.json()

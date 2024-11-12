@@ -38,4 +38,4 @@ async def test_discord_invalid_server():
     protocol = DiscordProtocol()
     with pytest.raises(QueryError) as exc_info:
         await protocol.query("000000000000000000")  # Invalid server ID
-    assert "403" in str(exc_info.value)
+    assert "404" in str(exc_info.value)

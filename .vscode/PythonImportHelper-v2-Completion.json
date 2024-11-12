@@ -41,6 +41,38 @@
         "documentation": {}
     },
     {
+        "label": "DiscordProtocol",
+        "importPath": "netpinger.protocols.discord",
+        "description": "netpinger.protocols.discord",
+        "isExtraImport": true,
+        "detail": "netpinger.protocols.discord",
+        "documentation": {}
+    },
+    {
+        "label": "DiscordProtocol",
+        "importPath": "netpinger.protocols.discord",
+        "description": "netpinger.protocols.discord",
+        "isExtraImport": true,
+        "detail": "netpinger.protocols.discord",
+        "documentation": {}
+    },
+    {
+        "label": "QueryError",
+        "importPath": "netpinger.exceptions",
+        "description": "netpinger.exceptions",
+        "isExtraImport": true,
+        "detail": "netpinger.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "QueryError",
+        "importPath": "netpinger.exceptions",
+        "description": "netpinger.exceptions",
+        "isExtraImport": true,
+        "detail": "netpinger.exceptions",
+        "documentation": {}
+    },
+    {
         "label": "socket",
         "kind": 6,
         "isExtraImport": true,
@@ -160,22 +192,6 @@
         "documentation": {}
     },
     {
-        "label": "DiscordProtocol",
-        "importPath": "netpinger.protocols.discord",
-        "description": "netpinger.protocols.discord",
-        "isExtraImport": true,
-        "detail": "netpinger.protocols.discord",
-        "documentation": {}
-    },
-    {
-        "label": "QueryError",
-        "importPath": "netpinger.exceptions",
-        "description": "netpinger.exceptions",
-        "isExtraImport": true,
-        "detail": "netpinger.exceptions",
-        "documentation": {}
-    },
-    {
         "label": "DnsResolver",
         "kind": 6,
         "importPath": "lib.networking.dns",
@@ -243,7 +259,7 @@
         "kind": 5,
         "importPath": "src.netpinger.querier",
         "description": "src.netpinger.querier",
-        "peekOfCode": "PROTOCOLS = {\n    \"dayz\": DayZProtocol,\n    \"discord\": DiscordProtocol\n}\nasync def query_server(game: str, host: str, port: int, timeout: float = 5.0) -> Dict[str, Any]:\n    \"\"\"\n    Query a game server and return its information.\n    Args:\n        game: The game protocol to use\n        host: Server hostname or IP (or guild ID for Discord)",
+        "peekOfCode": "PROTOCOLS = {\n    \"dayz\": DayZProtocol,\n    \"discord\": DiscordProtocol\n}\nasync def query_server(game: str, host: str, port: int = None, timeout: float = 5.0) -> Dict[str, Any]:\n    \"\"\"\n    Query a game server and return its information.\n    Args:\n        game: The game protocol to use\n        host: Server hostname or IP (or guild ID for Discord)",
         "detail": "src.netpinger.querier",
         "documentation": {}
     },

@@ -9,7 +9,7 @@ PROTOCOLS = {
     "discord": DiscordProtocol
 }
 
-async def query_server(game: str, host: str, port: int, timeout: float = 5.0) -> Dict[str, Any]:
+async def query_server(game: str, host: str, port: int = None, timeout: float = 5.0) -> Dict[str, Any]:
     """
     Query a game server and return its information.
     
@@ -30,4 +30,4 @@ async def query_server(game: str, host: str, port: int, timeout: float = 5.0) ->
         raise QueryError(f"Unsupported game protocol: {game}")
     
     protocol = protocol_class()
-    return await protocol.query(host, port, timeout) 
+    return await protocol.query(host, port, timeout)
