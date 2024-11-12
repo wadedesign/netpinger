@@ -158,6 +158,30 @@
         "documentation": {}
     },
     {
+        "label": "Tuple",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Dict",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
         "label": "Dict",
         "importPath": "typing",
         "description": "typing",
@@ -198,6 +222,15 @@
         "description": "lib.networking.dns",
         "peekOfCode": "class DnsResolver:\n    def __init__(self, logger: logging.Logger):\n        self.logger = logger\n    async def resolve(self, host: str, ip_family: int, srv_record_prefix: str = None):\n        self.logger.debug(f'DNS Lookup: {host}')\n        try:\n            socket.inet_pton(socket.AF_INET, host)\n            self.logger.debug(f'Raw IP Address: {host}')\n            return { 'address': host }\n        except socket.error:",
         "detail": "lib.networking.dns",
+        "documentation": {}
+    },
+    {
+        "label": "Arma3Protocol",
+        "kind": 6,
+        "importPath": "src.netpinger.protocols.arma",
+        "description": "src.netpinger.protocols.arma",
+        "peekOfCode": "class Arma3Protocol:\n    \"\"\"Implementation of the Arma 3 server query protocol (based on Valve protocol).\"\"\"\n    A2S_INFO = b'\\xFF\\xFF\\xFF\\xFFTSource Engine Query\\x00'\n    ARMA3_INFO = b'\\xFF\\xFF\\xFF\\xFFTArma3 Server Query\\x00'\n    A2S_INFO_RESPONSE = 0x49  # 'I'\n    A2S_PLAYER = b'\\xFF\\xFF\\xFF\\xFF\\x55'  # 'U'\n    A2S_RULES = b'\\xFF\\xFF\\xFF\\xFF\\x56'   # 'V'\n    QUERY_PORT_OFFSETS = [24, 123, 23, 0]  \n    MAX_RETRIES = 3\n    async def query(self, host: str, port: int, timeout: float) -> Dict[str, Any]:",
+        "detail": "src.netpinger.protocols.arma",
         "documentation": {}
     },
     {
