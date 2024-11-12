@@ -3,7 +3,7 @@ from netpinger.protocols.discord import DiscordProtocol
 from netpinger.exceptions import QueryError
 
 async def main():
-    guild_id = "1279289370125275219"  # Replace with your Discord server ID
+    guild_id = "1279289370125275219"  # example but replace with your server id
     protocol = DiscordProtocol()
     
     try:
